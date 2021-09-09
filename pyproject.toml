@@ -5,6 +5,18 @@ description = "Python wrapper for fzf."
 authors = ["samedamci <samedamci@disroot.org>"]
 license = "ISC"
 packages = [{ include = "fzf" }]
+homepage = "https://github.com/samedamci/python-fzf"
+repository = "https://github.com/samedamci/python-fzf"
+keywords = ["fzf", "wrapper"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "License :: OSI Approved :: ISC License (ISCL)",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Intended Audience :: Developers",
+  "Topic :: Utilities",
+  "Topic :: Software Development :: Version Control",
+]
 
 [tool.poetry.dependencies]
 python = "^3.9.2"
