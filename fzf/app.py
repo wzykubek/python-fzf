@@ -14,6 +14,7 @@ def fzf(
     prompt: Optional[str] = None,
     multi: bool = False,
     mouse: bool = True,
+    sort: bool = False,
     options: Optional[str] = None,
 ) -> List[Result]:
     cmd = [EXE, "--with-nth=2.."]
@@ -23,6 +24,8 @@ def fzf(
         cmd.append("--multi")
     if not mouse:
         cmd.append("--no-mouse")
+    if not sort:
+        cmd.append("--no-sort")
     if options:
         cmd += options.split(" ")
 
