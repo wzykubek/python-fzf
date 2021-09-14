@@ -13,6 +13,7 @@ def fzf(
     iterable: Iterable,
     prompt: Optional[str] = None,
     multi: bool = False,
+    cycle: bool = False,
     mouse: bool = True,
     sort: bool = False,
     reverse: bool = False,
@@ -23,6 +24,8 @@ def fzf(
         cmd.append(f"--prompt={prompt.strip()} ")
     if multi:
         cmd.append("--multi")
+    if cycle:
+        cmd.append("--cycle")
     if not mouse:
         cmd.append("--no-mouse")
     if not sort:
