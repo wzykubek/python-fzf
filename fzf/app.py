@@ -17,6 +17,7 @@ def fzf(
     mouse: bool = True,
     sort: bool = False,
     reverse: bool = False,
+    ansi: bool = True,
     options: Optional[str] = None,
 ) -> List[Result]:
     cmd = [EXE, "--with-nth=2.."]
@@ -32,6 +33,8 @@ def fzf(
         cmd.append("--no-sort")
     if reverse:
         cmd.append("--tac")
+    if ansi:
+        cmd.append("--ansi")
     if options:
         cmd += options.split(" ")
 
