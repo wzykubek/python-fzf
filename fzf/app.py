@@ -18,6 +18,7 @@ def fzf(
     sort: bool = False,
     reverse: bool = False,
     ansi: bool = True,
+    bold: bool = True,
     options: Optional[str] = None,
 ) -> List[Result]:
     cmd = [EXE, "--with-nth=2.."]
@@ -35,6 +36,8 @@ def fzf(
         cmd.append("--tac")
     if ansi:
         cmd.append("--ansi")
+    if not bold:
+        cmd.append("--no-bold")
     if options:
         cmd += options.split(" ")
 
