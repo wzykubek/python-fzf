@@ -12,6 +12,7 @@ ENC = sys.getdefaultencoding()
 def fzf(
     iterable: Iterable,
     prompt: Optional[str] = None,
+    query: Optional[str] = None,
     multi: bool = False,
     cycle: bool = False,
     mouse: bool = True,
@@ -24,6 +25,8 @@ def fzf(
     cmd = [EXE, "--with-nth=2.."]
     if prompt:
         cmd.append(f"--prompt={prompt.strip()} ")
+    if query:
+        cmd.append(f"--query={query}")
     if multi:
         cmd.append("--multi")
     if cycle:
